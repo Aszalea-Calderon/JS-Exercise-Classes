@@ -180,7 +180,6 @@ class Instructor extends Lambdasian {//check extends and what it takes in
     this.favLanguage = obj.favLanguage;
     this.catchPhrase = obj.catchPhrase;
    }
-
    demo(subject){
     return(`Today we are learning about ${subject}`);
    }
@@ -211,7 +210,7 @@ class Instructor extends Lambdasian {//check extends and what it takes in
 */
 class Student extends Lambdasian{
   constructor(obj) {
-    super(Lambdasian);
+    super(obj);
     this.previousBackground = obj.previousBackground;
     this. className = obj.className;
     this.favSubjects = obj.favSubjects;
