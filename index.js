@@ -56,7 +56,7 @@ class Person {
     }
 
     toString(){
-        return (`${this.name} ${this.age}`);//Look over later
+        return `${this.name} ${this.age}`;//Look over later
        }  
 }
 
@@ -99,17 +99,19 @@ class Car {
   fill(gallons){
     this.tank += gallons;
   }
-  drive(distance){//hmm...
-    this.odometer +=distance;
-    // distance/this.milesPerGallon -= this.tank;//Think about
+
+  drive(dist){
+    const drivableMiles = this.tank * this.milesPerGallon;
+    if (dist <= drivableMiles) {
+      this.odometer = this.odometer + dist;
+      this.tank = this.tank - (dist / this.milesPerGallon)
+    } else {
+      this.odometer = this.odometer + drivableMiles;
+      this.tank = 0;
+      return `I ran out of fuel at ${this.odometer} miles!`
+    }
   }
-
-  // fuel(odometer){
-  //   this.tank = 0 ? `I ran out of fuel at ${odometer} miles!`
-  // }
-
 }
-
 
 
 // class Car {
@@ -152,7 +154,7 @@ class Lambdasian {
     this.location = obj.location;
   }
   speak(){
-    return(`Hello my name is ${this.name}, I am from ${this.location}`);
+    return`Hello my name is ${this.name}, I am from ${this.location}`;
   }
 }
 
@@ -181,10 +183,10 @@ class Instructor extends Lambdasian {//check extends and what it takes in
     this.catchPhrase = obj.catchPhrase;
    }
    demo(subject){
-    return(`Today we are learning about ${subject}`);
+    return `Today we are learning about ${subject}`;
    }
    grade(student, subject){
-    return(`${student.name} receives a perfect score on ${subject}`);
+    return `${student.name} receives a perfect score on ${subject}`;
    }
 
 }
@@ -216,17 +218,19 @@ class Student extends Lambdasian{
     this.favSubjects = obj.favSubjects;
   }
   listSubjects(){
-    return(`Loving ${this.favSubjects}!`);
+    return `Loving ${this.favSubjects}!`;
   }
-  PRAssignment(student, subject){
-   return(`${student.name} has submitted a PR for ${subject}`);
+  PRAssignment(subject){
+   return `${this.name} has submitted a PR for ${subject}`;
   }
-  sprintChallenge(student, subject){
-    return(`${student.name} has begun sprint challenge on ${subject}`)
+  sprintChallenge(subject){
+    return `${this.name} has begun sprint challenge on ${subject}`;
   }
 }
 
-
+// grade(student, subject){
+//   return`${student.name} receives a perfect score on ${subject}`;
+//  }
 
 // }
 // // grade(student, subject){
@@ -251,11 +255,11 @@ class ProjectManager extends Instructor {
     this.gradClassName = obj.gradClassName;
     this.favInstructor = obj.favInstructor;
   }
-  standUp(student, subject){
-    return (`${student.name} has submitted a PR for ${subject}`)
+  standUp(subject){
+    return `${this.name} has submitted a PR for ${subject}`;
   }
-  debugsCode(name, student, subject){
-    return (`${name} debugs ${student.name}'s code on ${subject}`)
+  debugsCode(student, subject){
+    return `${this.name} debugs ${student.name}'s code on ${subject}`;
   }
 }
 
