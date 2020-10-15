@@ -181,9 +181,9 @@ class Instructor extends Lambdasian {
     this.catchPhrase = obj.catchPhrase;
    }
 
-   speak(){
-    return(`Hello my name is ${this.name}, I am from ${this.location}`);
-  }// check on yodas fight classes. He couldnt
+  //  speak(){
+  //   return(`Hello my name is ${this.name}, I am from ${this.location}`);
+  // }// check on yodas fight classes. He couldnt
 
    demo(subject){
     return(`Today we are learning about ${subject}`);
