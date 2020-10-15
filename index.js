@@ -99,13 +99,13 @@ class Car {
   fill(gallons){
     this.tank += gallons;
   }
-  // drive(distance){//hmm...
-  //   this.distance += this.odometer;
-  //   this.distance -= this.tank/this.milesPerGallon;
-  // }
+  drive(distance){//hmm...
+    this.odometer +=distance;
+    // distance/this.milesPerGallon -= this.tank;//Think about
+  }
 
   // fuel(odometer){
-  //   this.tank = 0 ? `I ran out of fuel at ${odometer} miles!`;
+  //   this.tank = 0 ? `I ran out of fuel at ${odometer} miles!`
   // }
 
 }
@@ -218,15 +218,20 @@ class Student extends Lambdasian{
   listSubjects(){
     return(`Loving ${this.favSubjects}!`);
   }
-  PRAssignment(name,subject){
-   return(`${name} has submitted a PR for ${subject}`);
+  PRAssignment(student, subject){
+   return(`${student.name} has submitted a PR for ${subject}`);
   }
   sprintChallenge(student, subject){
     return(`${student.name} has begun sprint challenge on ${subject}`)
   }
- 
 }
 
+
+
+// }
+// // grade(student, subject){
+// //   return(`${student.name} receives a perfect score on ${subject}`);
+// //  }
 /*
   TASK 6
     - Write a ProjectManager class extending Instructor.
@@ -253,6 +258,24 @@ class ProjectManager extends Instructor {
     return (`${name} debugs ${student.name}'s code on ${subject}`)
   }
 }
+
+
+
+// class Instructor extends Lambdasian {//check extends and what it takes in
+//   constructor(obj){
+//    super(obj);//check the homework yesterday for clarification on this//
+//    this.specialty = obj.specialty;
+//    this.favLanguage = obj.favLanguage;
+//    this.catchPhrase = obj.catchPhrase;
+//   }
+//   demo(subject){
+//    return(`Today we are learning about ${subject}`);
+//   }
+//   grade(student, subject){
+//    return(`${student.name} receives a perfect score on ${subject}`);
+//   }
+
+
 
 /*
   STRETCH PROBLEM (no tests!)
