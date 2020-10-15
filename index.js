@@ -218,8 +218,8 @@ class Student extends Lambdasian{
   listSubjects(){
     return(`Loving ${this.favSubjects}!`);
   }
-  PRAssignment(student,subject){
-   return(`${student.name} has submitted a PR for ${subject}`);
+  PRAssignment(name,subject){
+   return(`${name} has submitted a PR for ${subject}`);
   }
   sprintChallenge(student, subject){
     return(`${student.name} has begun sprint challenge on ${subject}`)
@@ -242,7 +242,7 @@ class Student extends Lambdasian{
 */
 class ProjectManager extends Instructor {
   constructor(obj){
-    super(Instructor);
+    super(obj);
     this.gradClassName = obj.gradClassName;
     this.favInstructor = obj.favInstructor;
   }
