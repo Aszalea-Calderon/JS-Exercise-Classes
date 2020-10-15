@@ -173,17 +173,13 @@ class Lambdasian {
         // + `demo` receives a `subject` string as an argument and returns the phrase 'Today we are learning about {subject}' where subject is the param passed in.
         + `grade` receives a `student` object and a `subject` string as arguments and returns '{student.name} receives a perfect score on {subject}'
 */
-class Instructor extends Lambdasian {
+class Instructor extends Lambdasian {//check extends and what it takes in
    constructor(obj){
-    super(Lambdasian);//check the homework yesterday for clarification on this
+    super(obj);//check the homework yesterday for clarification on this//
     this.specialty = obj.specialty;
     this.favLanguage = obj.favLanguage;
     this.catchPhrase = obj.catchPhrase;
    }
-
-  //  speak(){
-  //   return(`Hello my name is ${this.name}, I am from ${this.location}`);
-  // }// check on yodas fight classes. He couldnt
 
    demo(subject){
     return(`Today we are learning about ${subject}`);
@@ -194,6 +190,10 @@ class Instructor extends Lambdasian {
 
 }
 
+
+///  //  speak(){
+  //   return(`Hello my name is ${this.name}, I am from ${this.location}`);
+  // }// check on yodas fight classes. He couldnt??
 /*
   TASK 5
     // - Write a Student class extending Lambdasian.
